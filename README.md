@@ -76,10 +76,10 @@ JSON Schema for the simple GET endpoint will be as follows:
 
 Product Owner/Scrum Master/DevOps/GitHub Administrator - Dai Huynh
 
-UI Specialist - Utshav Khatiwada
+UI Specialist - Benjamin Siener
 
 Business Logic and Persistence Specialist - Simon Manzler
 
-Developer - Benjamin Siener
+Developer - Utshav Khatiwada
 
 Developer - Nolan Huff
