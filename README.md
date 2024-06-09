@@ -34,3 +34,19 @@ BudgetMe features a dynamic chart at the bottom of the dashboard, which visualiz
 This helps you see at a glance where your money is going and adjust your spending habits accordingly.
 
 ## Story Board
+
+## Class Diagram 
+![Untitled Diagram.drawio.png](..%2F..%2F..%2FDownloads%2FUntitled%20Diagram.drawio.png)
+### Class Descriptions
+
+#### BudgetMe
+Represents the main class of the BudgetMe app. It contains methods for signing up, signing in, initializing the budget, and visualizing spending.
+
+#### User
+Represents a user of the app. It contains fields for the username and password.
+
+#### Expense
+Represents an expense item. It contains fields for the name of the expense and the amount.
+
+#### Dashboard
+Represents the dashboard of the app. It contains a list of expenses and the total amount of money available.
