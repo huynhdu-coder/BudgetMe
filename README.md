@@ -39,6 +39,26 @@ This helps you see at a glance where your money is going and adjust your spendin
 ![Class Diagram](https://github.com/huynhdu-coder/BudgetMe/raw/master/src/main/resources/Diagram.drawio.png)
 ### Class Descriptions
 
+## JSON Schema
+JSON Schema for the simple GET endpoint will be as follows: 
+```json
+{
+  "budget": 1500,
+  "expense": [
+    {
+      "name": "Bread",
+      "price": 10,
+      "category": "Food"
+    },
+    {
+      "name": "Apple",
+      "price": 20,
+      "category": "Food"
+    }
+  ]
+}
+```
+
 #### BudgetMe
 Represents the main class of the BudgetMe app. It contains methods for signing up, signing in, initializing the budget, and visualizing spending.
 
