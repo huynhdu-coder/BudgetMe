@@ -36,7 +36,7 @@ This helps you see at a glance where your money is going and adjust your spendin
 ## Story Board
 
 ## Class Diagram 
-![Untitled Diagram.drawio.png](..%2F..%2F..%2FDownloads%2FUntitled%20Diagram.drawio.png)
+![Class Diagram](https://github.com/huynhdu-coder/BudgetMe/raw/master/src/main/resources/Diagram.drawio.png)
 ### Class Descriptions
 
 #### BudgetMe
