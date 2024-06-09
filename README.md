@@ -39,6 +39,19 @@ This helps you see at a glance where your money is going and adjust your spendin
 ![Class Diagram](https://github.com/huynhdu-coder/BudgetMe/raw/master/src/main/resources/Diagram.drawio.png)
 ### Class Descriptions
 
+
+#### BudgetMe
+Represents the main class of the BudgetMe app. It contains methods for signing up, signing in, initializing the budget, and visualizing spending.
+
+#### User
+Represents a user of the app. It contains fields for the username and password.
+
+#### Expense
+Represents an expense item. It contains fields for the name of the expense and the amount.
+
+#### Dashboard
+Represents the dashboard of the app. It contains a list of expenses and the total amount of money available.
+
 ## JSON Schema
 JSON Schema for the simple GET endpoint will be as follows: 
 ```json
@@ -59,14 +72,14 @@ JSON Schema for the simple GET endpoint will be as follows:
 }
 ```
 
-#### BudgetMe
-Represents the main class of the BudgetMe app. It contains methods for signing up, signing in, initializing the budget, and visualizing spending.
+## Scrum roles
 
-#### User
-Represents a user of the app. It contains fields for the username and password.
+Product Owner/Scrum Master/DevOps/GitHub Administrator - Dai Huynh
 
-#### Expense
-Represents an expense item. It contains fields for the name of the expense and the amount.
+UI Specialist - Utshav Khatiwada
 
-#### Dashboard
-Represents the dashboard of the app. It contains a list of expenses and the total amount of money available.
+Business Logic and Persistence Specialist - Simon Manzler
+
+Developer - Benjamin Siener
+
+Developer - Nolan Huff
