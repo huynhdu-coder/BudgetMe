@@ -87,3 +87,7 @@ Developer - Nolan Huff
 ## Milestones
 
 [Milestone 1](https://github.com/huynhdu-coder/BudgetMe/milestone/1)
+
+## Weekly Standup Meeting
+
+[We meet 10:00 AM Eastern on Saturday on Teams](https://teams.microsoft.com/l/meetup-join/19%3ameeting_ODE1MGUwYTctYmZlNy00MDYzLWIyM2UtMTU5OTA3ZGI3N2Ex%40thread.v2/0?context=%7b%22Tid%22%3a%22f5222e6c-5fc6-48eb-8f03-73db18203b63%22%2c%22Oid%22%3a%22f17bfd08-cac7-4db5-b02d-5d84e54e7513%22%7d)
