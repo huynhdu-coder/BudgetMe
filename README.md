@@ -83,3 +83,7 @@ Business Logic and Persistence Specialist - Simon Manzler
 Developer - Utshav Khatiwada
 
 Developer - Nolan Huff
+
+## Milestones
+
+[Milestone 1](https://github.com/huynhdu-coder/BudgetMe/milestone/1)
