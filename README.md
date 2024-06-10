@@ -51,6 +51,14 @@ BudgetMe features a dynamic chart at the bottom of the dashboard, which visualiz
 This helps you see at a glance where your money is going and adjust your spending habits accordingly.
 
 ## Story Board
+1. After a user downloads BudgetMe successfully, a page with "Sign In" and "Log In" buttons occurs. The user registers for a new account and answers a few financial questions.
+![Landing Page](https://github.com/huynhdu-coder/BudgetMe/blob/master/src/main/resources/LandingPage.PNG)
+
+2. After passing the user authentication, a landing page with a welcoming message explains our goals, missions, and purposes.
+![First Login Page](https://github.com/huynhdu-coder/BudgetMe/blob/master/src/main/resources/FirstLoginPage.PNG)
+
+3. A dashboard occurs where the user can input their total money and itemize their planned expenses. 
+![Dashboard](https://github.com/huynhdu-coder/BudgetMe/blob/master/src/main/resources/Dashboard.PNG)
 
 ## Class Diagram 
 ![Class Diagram](https://github.com/huynhdu-coder/BudgetMe/raw/master/src/main/resources/Diagram.drawio.png)
@@ -69,10 +77,6 @@ Represents an expense item. It contains fields for the name of the expense and t
 #### Dashboard
 Represents the dashboard of the app. It contains a list of expenses and the total amount of money available.
 
-### Screen Mockups
-![Landing Page](https://github.com/huynhdu-coder/BudgetMe/blob/master/src/main/resources/LandingPage.PNG)
-![First Login Page](https://github.com/huynhdu-coder/BudgetMe/blob/master/src/main/resources/FirstLoginPage.PNG)
-![Dashboard](https://github.com/huynhdu-coder/BudgetMe/blob/master/src/main/resources/Dashboard.PNG)
 
 ## JSON Schema
 JSON Schema for the simple GET endpoint will be as follows: 
