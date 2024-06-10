@@ -70,9 +70,9 @@ Represents an expense item. It contains fields for the name of the expense and t
 Represents the dashboard of the app. It contains a list of expenses and the total amount of money available.
 
 ### Screen Mockups
-![Landing Page](https://github.com/huynhdu-coder/BudgetMe/raw/master/src/main/resources/LandingPage.png)
-![First Login Page](https://github.com/huynhdu-coder/BudgetMe/raw/master/src/main/resources/FirstLoginPage.png)
-![Dashboard](https://github.com/huynhdu-coder/BudgetMe/raw/master/src/main/resources/Dashboard.png)
+![Landing Page](https://github.com/huynhdu-coder/BudgetMe/blob/master/src/main/resources/LandingPage.PNG)
+![First Login Page](https://github.com/huynhdu-coder/BudgetMe/blob/master/src/main/resources/FirstLoginPage.PNG)
+![Dashboard](https://github.com/huynhdu-coder/BudgetMe/blob/master/src/main/resources/Dashboard.PNG)
 
 ## JSON Schema
 JSON Schema for the simple GET endpoint will be as follows: 
