@@ -9,6 +9,23 @@ Welcome to BudgetMe, your personal financial budgeting app designed to help you 
 - **Benjamin Siener**
 - **Nolan Huff**
 
+## Functional Requirements
+As a user
+I want to create an account and customize my financial preferences
+So that I can have a personalized budgeting experience
+
+Requirement 1: Inputting Total Money and Expenses
+
+Given a user is logged in and on the dashboard page
+When the user inputs their total available money and lists their planned expenses (e.g., Bread: $10, Apple: $20)
+Then the system should display the total money and itemized expenses correctly on the dashboard
+
+Requirement 2: Customization of Financial Preferences
+
+Given a user has successfully created an account
+When the user logs in for the first time and answers questions about their financial goals, monthly income, and savings targets
+Then the system should save these preferences and customize the dashboard to reflect these goals
+
 ## Features
 
 ### Landing Page
@@ -51,6 +68,11 @@ Represents an expense item. It contains fields for the name of the expense and t
 
 #### Dashboard
 Represents the dashboard of the app. It contains a list of expenses and the total amount of money available.
+
+### Screen Mockups
+![Landing Page](https://github.com/huynhdu-coder/BudgetMe/raw/master/src/main/resources/LandingPage.png)
+![First Login Page](https://github.com/huynhdu-coder/BudgetMe/raw/master/src/main/resources/FirstLoginPage.png)
+![Dashboard](https://github.com/huynhdu-coder/BudgetMe/raw/master/src/main/resources/Dashboard.png)
 
 ## JSON Schema
 JSON Schema for the simple GET endpoint will be as follows: 
