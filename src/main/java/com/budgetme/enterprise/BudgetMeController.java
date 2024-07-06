@@ -15,6 +15,6 @@ public class BudgetMeController {
      */
     @RequestMapping("/")
     public String index(){
-        return "start";
+        return BudgetMeService.getHomePage();
     }
 }
