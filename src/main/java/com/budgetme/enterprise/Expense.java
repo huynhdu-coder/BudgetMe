@@ -1,4 +1,4 @@
-package com.budgetme.sql;
+package com.budgetme.enterprise;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
