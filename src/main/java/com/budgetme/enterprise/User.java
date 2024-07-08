@@ -13,6 +13,15 @@ public class User {
 
     private String username;
     private String password;
+    private boolean IsLoggedIn;
+
+    public Boolean IsLoggedIn(){
+        return IsLoggedIn;
+    }
+
+    public void setIsLoggedIn(boolean IsLoggedIn){
+        this.IsLoggedIn = IsLoggedIn;
+    }
 
     public Integer getUserId() {
         return userId;
