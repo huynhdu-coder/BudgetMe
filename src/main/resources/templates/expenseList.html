@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Expense List</title>
+</head>
+<body>
+<h1>Expense List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Type</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="expense : ${expenses}">
+        <td th:text="${expense.description}"></td>
+        <td th:text="${expense.price}"></td>
+        <td th:text="${expense.type}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
