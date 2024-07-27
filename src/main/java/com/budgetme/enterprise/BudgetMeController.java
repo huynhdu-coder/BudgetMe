@@ -29,7 +29,7 @@ public class BudgetMeController {
             return "dashboard";
         }
 
-        return "dashboard";
+        return "start";
     }
 
     @PostMapping("/logout")
