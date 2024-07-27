@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/expenses")
@@ -38,5 +42,13 @@ public class ExpenseController {
     public String listExpenses(Model model) {
         model.addAttribute("expenses", expenseService.getAllExpenses());
         return "expenseList";
+    }
+
+    @GetMapping("/api/planned")
+    @ResponseBody
+    public List<ExpenseInput> getPlannedExpenses() {
+        return expenseService.getAllExpenses().stream()
+                .filter(expense -> "planned".equalsIgnoreCase(expense.getType()))
+                .collect(Collectors.toList());
     }
 }
