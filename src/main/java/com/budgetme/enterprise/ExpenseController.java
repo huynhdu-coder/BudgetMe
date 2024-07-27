@@ -47,8 +47,23 @@ public class ExpenseController {
     @GetMapping("/api/planned")
     @ResponseBody
     public List<ExpenseInput> getPlannedExpenses() {
-        return expenseService.getAllExpenses().stream()
+        List<ExpenseInput> plannedExpenses = expenseService.getAllExpenses().stream()
                 .filter(expense -> "planned".equalsIgnoreCase(expense.getType()))
                 .collect(Collectors.toList());
+        // test values
+        if (plannedExpenses.isEmpty()) {
+            plannedExpenses.add(createPlaceholderExpense("Rent", 1000.0));
+            plannedExpenses.add(createPlaceholderExpense("Utilities", 150.0));
+        }
+
+        return plannedExpenses;
+    }
+
+    private ExpenseInput createPlaceholderExpense(String description, Double price) {
+        ExpenseInput placeholder = new ExpenseInput();
+        placeholder.setDescription(description);
+        placeholder.setPrice(price);
+        placeholder.setType("planned");
+        return placeholder;
     }
 }
