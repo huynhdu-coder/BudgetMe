@@ -2,15 +2,18 @@ package com.budgetme.enterprise;
 
 import com.budgetme.enterprise.dao.User;
 import com.budgetme.enterprise.repository.UserRepository;
+import com.budgetme.enterprise.service.ExpenseService;
 import com.budgetme.enterprise.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.view.RedirectView;
 
 /**
@@ -24,6 +27,9 @@ public class BudgetMeController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private ExpenseService expenseService;
 
     /**
      * Handles the root ("/") URL request.
@@ -141,4 +147,17 @@ public class BudgetMeController {
 
         return "loginUser";
     }
+    /**
+     * Returns the logged In Username
+     */
+    @GetMapping("/api/username")
+    @ResponseBody
+    public String getUsername(HttpSession session) {
+        User loggedInUser = (User) session.getAttribute("user");
+        if (loggedInUser == null) {
+            return "start";
+        }
+        return loggedInUser.getUsername();
+    }
+
 }

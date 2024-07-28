@@ -1,0 +1,46 @@
+        .expense-input-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            z-index: 1000;
+            margin: 10%;
+        }
+        .expense-input-container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .expense-input-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .expense-input-container input,
+        .expense-input-container select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .expense-input-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .expense-input-container button:hover {
+            background-color: #0056b3;
+        }
+        .expense-input-container p {
+            color: green;
+            font-weight: bold;
+        }

@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Expense Input</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/expensestyles.css}">
 </head>
 <body>
 <div th:fragment="ExpenseInput">
-<h1>Enter Your Expenses</h1>
-<form action="/expenses/input" method="post">
-    <label for="description">Description:</label>
-    <input type="text" id="description" name="description" required><br><br>
-    <label for="price">Price:</label>
-    <input type="number" id="price" name="price" step="0.01" required><br><br>
-    <label for="type">Type:</label>
-    <select id="type" name="type" required>
-        <option value="planned">Planned</option>
-        <option value="spent">Spent</option>
-    </select><br><br>
-    <button type="submit">Submit</button>
-</form>
-<p th:text="${message}"></p>
+    <div class="expense-input-container">
+        <h1>Enter Your Expenses</h1>
+        <form action="/expenses/input" method="post">
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" required>
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" required>
+            <label for="type">Type:</label>
+            <select id="type" name="type" required>
+                <option value="planned">Planned</option>
+                <option value="spent">Spent</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+        <p th:text="${message}"></p>
+    </div>
 </div>
 </body>
 </html>
