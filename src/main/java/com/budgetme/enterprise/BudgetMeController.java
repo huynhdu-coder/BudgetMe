@@ -13,16 +13,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.view.RedirectView;
 
+/**
+ * Controller class for handling requests related to user management and navigation in the BudgetMe application.
+ */
 @Controller
 public class BudgetMeController {
+
     @Autowired
     public UserRepository userRepository;
+
     @Autowired
     private UserService userService;
 
-
+    /**
+     * Handles the root ("/") URL request.
+     * Redirects to the dashboard if a user is logged in, otherwise shows the start page.
+     *
+     * @param session the HTTP session
+     * @return the name of the view to render
+     */
     @RequestMapping("/")
-    public String index(HttpSession session){
+    public String index(HttpSession session) {
         User user = (User) session.getAttribute("user");
 
         if (user != null) {
@@ -32,8 +43,15 @@ public class BudgetMeController {
         return "start";
     }
 
+    /**
+     * Handles the logout request.
+     * Logs out the user and redirects to the start page.
+     *
+     * @param session the HTTP session
+     * @return the name of the view to render
+     */
     @PostMapping("/logout")
-    public String logout(HttpSession session){
+    public String logout(HttpSession session) {
         User user = (User) session.getAttribute("user");
 
         if (user != null) {
@@ -45,14 +63,33 @@ public class BudgetMeController {
         return "start";
     }
 
+    /**
+     * Handles the request to create a new user.
+     * Creates a new user and redirects to the dashboard.
+     *
+     * @param username the username of the new user
+     * @param password the password of the new user
+     * @return the name of the view to render
+     */
     @PostMapping("/create_user")
     public String createUser(@RequestParam String username, @RequestParam String password) {
         userService.createUser(username, password);
-        return "/dashboard";
+        return "dashboard";
     }
 
+    /**
+     * Handles the login request.
+     * Logs in the user if the credentials are correct and redirects to the dashboard.
+     * If the credentials are incorrect, shows the login page again.
+     *
+     * @param Username the username
+     * @param Password the password
+     * @param model    the model
+     * @param session  the HTTP session
+     * @return the name of the view to render
+     */
     @PostMapping("/login_user")
-    public String loginUser(@RequestParam String Username, @RequestParam String Password, Model model, HttpSession session){
+    public String loginUser(@RequestParam String Username, @RequestParam String Password, Model model, HttpSession session) {
         User user = userRepository.findByUsername(Username);
 
         if (user != null) {
@@ -61,20 +98,25 @@ public class BudgetMeController {
                 userRepository.save(user);
 
                 session.setAttribute("user", user);
-            }
-            else {
+            } else {
                 return "loginUser";
             }
-        }
-        else {
+        } else {
             return "loginUser";
         }
 
         return "dashboard";
     }
 
+    /**
+     * Handles the request to show the create user page.
+     * Redirects to the dashboard if a user is logged in, otherwise shows the create user page.
+     *
+     * @param session the HTTP session
+     * @return the name of the view to render
+     */
     @GetMapping("/create_user")
-    public String showCreateUser(HttpSession session){
+    public String showCreateUser(HttpSession session) {
         User user = (User) session.getAttribute("user");
         if (user != null) {
             return "dashboard";
@@ -82,8 +124,15 @@ public class BudgetMeController {
         return "createUser";
     }
 
+    /**
+     * Handles the request to show the login page.
+     * Redirects to the dashboard if a user is logged in, otherwise shows the login page.
+     *
+     * @param session the HTTP session
+     * @return the name of the view to render
+     */
     @GetMapping("/login_user")
-    public String showLoginUser(HttpSession session){
+    public String showLoginUser(HttpSession session) {
         User user = (User) session.getAttribute("user");
 
         if (user != null) {
