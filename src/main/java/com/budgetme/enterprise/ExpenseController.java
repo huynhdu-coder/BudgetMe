@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import jakarta.servlet.http.HttpSession;
+
 
 import java.util.Collections;
 import java.util.List;
@@ -31,14 +33,16 @@ public class ExpenseController {
     }
 
     @PostMapping("/input")
-    public String handleExpenseInput(@RequestParam String description, @RequestParam Double price, @RequestParam String type, Model model) {
+    public String handleExpenseInput(@RequestParam String description, @RequestParam Double price, @RequestParam String type, Model model, HttpSession session) {
+        User loggedInUser = (User) session.getAttribute("user");
         ExpenseInput expenseInput = new ExpenseInput();
         expenseInput.setDescription(description);
         expenseInput.setPrice(price);
         expenseInput.setType(type);
+        expenseInput.setUser(loggedInUser); // Set the logged-in user
         expenseService.saveExpense(expenseInput);
         model.addAttribute("message", "Expense saved successfully!");
-        return "expenseInput";
+        return "dashboard";
     }
 
     @GetMapping("/list")
