@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -94,5 +95,25 @@ public class ExpenseController {
 
         // Fetch planned expenses for the logged-in user
         return expenseService.getExpensesByUserAndType(loggedInUser, "planned");
+    }
+    /**
+     * API endpoint to delete planned expenses.
+     *
+     *
+     * @param session the HTTP session
+     * @return if success or error
+     */
+    @DeleteMapping("/delete")
+    @ResponseBody
+    public String deleteAllExpenses(HttpSession session) {
+        User loggedInUser = (User) session.getAttribute("user");
+        if (loggedInUser == null) {
+            return "User not logged in";
+        }
+        boolean isRemoved = expenseService.deleteAllExpensesByUser(loggedInUser);
+        if (!isRemoved) {
+            return "Error deleting the expenses";
+        }
+        return "All expenses deleted successfully";
     }
 }

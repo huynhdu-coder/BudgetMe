@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface ExpenseRepository extends JpaRepository<ExpenseInput, Long> {
     List<ExpenseInput> findByUserAndType(User user, String type);
+    void deleteByUser(User user);
 }

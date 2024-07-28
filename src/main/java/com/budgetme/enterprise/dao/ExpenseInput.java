@@ -18,7 +18,7 @@ public class ExpenseInput {
     private String type; // "planned" or "spent"
 
     @ManyToOne   //relation to the user
-    @JoinColumn(name = "userId", nullable = false)
+    @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     // Getters and setters
