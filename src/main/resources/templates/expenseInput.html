@@ -5,6 +5,7 @@
     <title>Expense Input</title>
 </head>
 <body>
+<div th:fragment="ExpenseInput">
 <h1>Enter Your Expenses</h1>
 <form action="/expenses/input" method="post">
     <label for="description">Description:</label>
@@ -19,5 +20,6 @@
     <button type="submit">Submit</button>
 </form>
 <p th:text="${message}"></p>
+</div>
 </body>
 </html>

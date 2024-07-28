@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class ExpenseInput {
@@ -14,6 +16,10 @@ public class ExpenseInput {
     private String description;
     private Double price;
     private String type; // "planned" or "spent"
+
+    @ManyToOne   //relation to the user
+    @JoinColumn(name = "userId", nullable = false)
+    private User user;
 
     // Getters and setters
 
@@ -47,5 +53,12 @@ public class ExpenseInput {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public User getUser() {
+        return user;
+    }
+    public void setUser(User user) {
+        this.user = user;
     }
 }
