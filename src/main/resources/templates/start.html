@@ -5,19 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BudgetMe | Index</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .hero-section {
+            background-color: #007bff;
+            color: white;
+            padding: 100px 0;
+        }
+        .info-section {
+            padding: 50px 0;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            margin: 5px;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    <div class="hero-section text-center">
-        <h1 class="display-4">Welcome to Our Application!</h1>
-        <p class="lead">We're glad to have you here. Explore and enjoy!</p>
-    </div>
-    <div class="container my-4">
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <a th:href="@{/login_user}" class="btn btn-primary">Login</a>
-                <a th:href="@{/create_user}" class="btn btn-primary">Sign Up</a>
-            </div>
+<div class="hero-section text-center">
+    <h1 class="display-4">Welcome to BudgetMe!</h1>
+    <p class="lead">Your ultimate tool for visualizing and managing your expenses.</p>
+</div>
+<div class="container my-4 info-section">
+    <div class="row text-center">
+        <div class="col-md-4">
+            <h3>Track Your Expenses</h3>
+            <p>Easily input your expenses and keep track of where your money is going.</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Visualize Your Spending</h3>
+            <p>See your expenses in a pie chart to better understand your spending habits.</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Manage Your Budget</h3>
+            <p>Manage your budget by keeping track of your expenses</p>
         </div>
     </div>
+</div>
+<div class="container text-center my-4">
+    <a th:href="@{/login_user}" class="btn btn-custom">Login</a>
+    <a th:href="@{/create_user}" class="btn btn-custom">Sign Up</a>
+</div>
 </body>
 </html>
+
