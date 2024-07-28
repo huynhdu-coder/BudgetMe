@@ -1,6 +1,5 @@
 package com.budgetme.enterprise.service;
 import com.budgetme.enterprise.dao.User;
-import com.budgetme.enterprise.repository.UserRepoCustom;
 import com.budgetme.enterprise.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,9 +8,17 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     @Autowired
-    private UserRepoCustom userRepositoryCustom;
+    private UserRepository userRepository;
 
-    public void createUser(String username, String password) {
-        userRepositoryCustom.insertUser(username, password);
+    public User createUser(String username, String password) {
+        User user = new User();
+        user.setUsername(username);
+        user.setPassword(password);
+        user.setIsLoggedIn(false);
+        return userRepository.save(user);
+    }
+
+    public User findByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 }
