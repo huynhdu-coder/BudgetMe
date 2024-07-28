@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+import com.budgetme.enterprise.dao.User;
 @Service
 public class ExpenseService {
 
@@ -18,5 +18,9 @@ public class ExpenseService {
 
     public ExpenseInput saveExpense(ExpenseInput expenseInput) {
         return expenseRepository.save(expenseInput);
+    }
+
+    public List<ExpenseInput> getExpensesByUserAndType(User user, String type) {
+        return expenseRepository.findByUserAndType(user, type);
     }
 }

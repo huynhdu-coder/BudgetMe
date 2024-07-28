@@ -46,7 +46,10 @@
         .chart{
             max-width: 250px;
             max-height: 250px;
-            margin-top: 20%;
+            margin-top: 10%;
+        }
+        .expenseinput{
+            margin-left: 50%;
         }
     </style>
 </head>
@@ -57,6 +60,7 @@
         <button type="submit" class="btn">Logout</button>
     </form>
 </div>
+<div th:include="expenseInput :: ExpenseInput" class="expenseinput"></div>
 <div th:include="piechart :: pieChartComponent" class="chart"></div>
 </body>
 

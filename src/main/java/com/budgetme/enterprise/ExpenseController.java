@@ -1,7 +1,9 @@
 package com.budgetme.enterprise;
 
 import com.budgetme.enterprise.dao.ExpenseInput;
+import com.budgetme.enterprise.dao.User;
 import com.budgetme.enterprise.service.ExpenseService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,24 +49,14 @@ public class ExpenseController {
 
     @GetMapping("/api/planned")
     @ResponseBody
-    public List<ExpenseInput> getPlannedExpenses() {
-        List<ExpenseInput> plannedExpenses = expenseService.getAllExpenses().stream()
-                .filter(expense -> "planned".equalsIgnoreCase(expense.getType()))
-                .collect(Collectors.toList());
-        // test values
-        if (plannedExpenses.isEmpty()) {
-            plannedExpenses.add(createPlaceholderExpense("Rent", 1000.0));
-            plannedExpenses.add(createPlaceholderExpense("Utilities", 150.0));
+    public List<ExpenseInput> getPlannedExpenses(HttpSession session) {
+        User loggedInUser = (User) session.getAttribute("user");
+        if (loggedInUser == null) {
+            return Collections.emptyList();
         }
 
-        return plannedExpenses;
+        // Fetch planned expenses for the logged-in user
+        return expenseService.getExpensesByUserAndType(loggedInUser, "planned");
     }
 
-    private ExpenseInput createPlaceholderExpense(String description, Double price) {
-        ExpenseInput placeholder = new ExpenseInput();
-        placeholder.setDescription(description);
-        placeholder.setPrice(price);
-        placeholder.setType("planned");
-        return placeholder;
-    }
 }
